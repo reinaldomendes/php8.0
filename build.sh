@@ -58,7 +58,7 @@ sed -i 's/libtidy-dev (>= 1:5.2.0)/libtidy-dev/' debian/control debian/control.i
 
 export DEB_BUILD_OPTIONS="nocheck parallel=${JOBS:-4}"
 export DEB_BUILD_PROFILES=nocheck
-export DEBFULLNAME='php7 contributors' DEBEMAIL='noreply@github.com'
+export DEBFULLNAME='php8 contributors' DEBEMAIL='noreply@github.com'
 dch --newversion "1:8.0.30-25+php8.${REVISION:-1}~${TARGET}.1" --distribution "$codename" \
   'Rebuild Sury security backports for this distribution.'
 mk-build-deps --install --remove --tool 'apt-get -y --no-install-recommends' debian/control
