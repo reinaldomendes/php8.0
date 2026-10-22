@@ -1,6 +1,6 @@
 # PHP 8.0 security backports for old Ubuntu and Debian
 
-[![Build](https://github.com/Niek/php7/actions/workflows/build.yml/badge.svg)](https://github.com/Niek/php7/actions/workflows/build.yml)
+[![Build](https://github.com/reinaldomendes/php8.0/actions/workflows/build.yml/badge.svg)](https://github.com/reinaldomendes/php8.0/actions/workflows/build.yml)
 
 **Still running PHP 8.0 on an old Ubuntu or Debian server?** These drop-in `.deb`
 packages patch two critical remote code execution bugs,
@@ -24,7 +24,7 @@ Back up your PHP configuration first, then run:
 ```bash
 target=$(. /etc/os-release; echo "$ID$VERSION_ID")
 cd "$(mktemp -d)"
-curl -fL "https://github.com/Niek/php7/releases/latest/download/php8.0-$target-amd64.tar.xz" -o php8.0.tar.xz
+curl -fL "https://github.com/reinaldomendes/php8.0/releases/latest/download/php8.0-$target-amd64.tar.xz" -o php8.0.tar.xz
 tar -xJf php8.0.tar.xz
 sha256sum -c SHA256SUMS
 sudo apt install --only-upgrade ./*.deb
@@ -41,7 +41,7 @@ When it finishes, restart PHP-FPM, Apache or any other long-running PHP process.
 
 - **Fixed:** CVE-2026-109618 and CVE-2026-109619, using the
   [official upstream backports](https://github.com/php/php-src/archive/refs/heads/PHP-8.0-CVE-2026-109618-109619.zip)
-  included in Sury's PHP 8.0.30 revision 31.
+  included in Sury's PHP 8.0.30 revision 25.
 - **Disabled:** session upload-progress tracking, as part of the fix. Regular
   file uploads still work.
 - **On releases with older libraries:** PCRE2 is bundled instead of using the

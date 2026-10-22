@@ -42,7 +42,7 @@ sed -i 's/php-common (>= 1:81~)/php-common (>= 1:35)/g' debian/control debian/co
 if [ "$VERSION_ID" = 16.04 ]; then
   apt-get install -y --no-install-recommends -t xenial-backports debhelper
 fi
-# Use bundled PCRE2 where the distro predates PHP 7.4's required library API.
+# Use bundled PCRE2 where the distro predates PHP 8.0's required library API.
 pcre_version=$(apt-cache policy libpcre2-dev | awk '/Candidate:/ {print $2}')
 if dpkg --compare-versions "$pcre_version" lt 10.30; then
   sed -i '/libpcre2-dev (>= 10.30),/d' debian/control debian/control.in
